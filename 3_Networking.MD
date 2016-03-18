@@ -45,15 +45,15 @@ En réseau informatique, on dit qu'un routeur fait du Network Address Translatio
 Network docker
 --------------
 
-Dés qu'on installe Docker, un brdige docker0 (interface réseau virtuelle) est créé.
+Dés qu'on installe Docker, un brdige **docker0** (interface réseau virtuelle) est créé.
 une adresse ip lui est assigné avec un masque sous réseau disponible.
 
 
 
-docker0   Link encap:Ethernet  HWaddr 00:00:00:00:00:00  
-          adr inet6: fe80::ecc9:9fff:fe8e:24db/64 Scope:Lien
-          UP BROADCAST MULTICAST  MTU:1500  Metric:1
-          Packets reçus:11 erreurs:0 :0 overruns:0 frame:0
-          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 lg file transmission:0 
-          Octets reçus:752 (752.0 B) Octets transmis:473 (473.0 B)
+    **docker0** Link encap:Ethernet  HWaddr 00:00:00:00:00:00  
+    adr inet6: fe80::ecc9:9fff:fe8e:24db/64 Scope:Lien
+    UP BROADCAST MULTICAST  MTU:1500  Metric:1
+    Packets reçus:11 erreurs:0 :0 overruns:0 frame:0
+    TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+    collisions:0 lg file transmission:0 
+    Octets reçus:752 (752.0 B) Octets transmis:473 (473.0 B)
