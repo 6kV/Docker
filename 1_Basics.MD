@@ -4,10 +4,12 @@ First example
     sudo docker run -t -i ubuntu:14.04 /bin/bash (runner un bash dans un container)
     sudo docker rm $(sudo docker ps -a -q)
 
+Mount volume
+------------
 
- sudo docker run -ti -v  /home/wazza/dev/:/home/wazza ubuntu:14.04 /bin/bash
- cd /home/wazza
- ls
+    sudo docker run -ti -v  /home/wazza/dev/:/home/wazza ubuntu:14.04 /bin/bash
+    cd /home/wazza
+    ls
 
 
 -v sans path du host : on crée un Data container
