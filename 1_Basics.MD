@@ -1,16 +1,16 @@
 First example
 =============
 
- + docker run busybox echo hello world
- + sudo docker run -t -i ubuntu:14.04 /bin/bash (runner un bash dans un container)
- + sudo docker rm $(sudo docker ps -a -q)
- + sudo docker run -ti -v  /home/wazza/dev/:/home/wazza ubuntu:14.04 /bin/bash
+> + docker run busybox echo hello world
+> + sudo docker run -t -i ubuntu:14.04 /bin/bash (runner un bash dans un container)
+> + sudo docker rm $(sudo docker ps -a -q)
 
-puis
 
-cd /home/wazza
-ls
-------
+> + sudo docker run -ti -v  /home/wazza/dev/:/home/wazza ubuntu:14.04 /bin/bash
+> cd /home/wazza
+> ls
+
+
 -v sans path du host : on crée un Data container
 
 sudo docker run -ti -v  /cookbook  ubuntu:14.04 /bin/bash
