@@ -1,39 +1,43 @@
 IP Adress of a container
 -------------------------
 
-sudo docker run -d --name nginx nginx
-sudo docker inspect --format {{IpAdress}}nginx
+    sudo docker run -d --name nginx nginx
+    sudo docker inspect --format {{IpAdress}}nginx
 
-sudo docker inspect --format '{{ .NetworkSettings.IPAddress}}' 09287
-172.17.0.8
+    sudo docker inspect --format '{{ .NetworkSettings.IPAddress}}' 09287
+    172.17.0.8
 
 Network
 --------
 
-ifconfig : InterFace CONFIGurator (informations sur les interfaces réseau)
-ifconfig peut aider à attribuer une adresse IP static à une interface réseau.
-ip est une commande qui permet de faire la même chose que ifconfig (plus puissant).
+    ifconfig : InterFace CONFIGurator (informations sur les interfaces réseau)
 
-iptables est un logiciel libre de l'espace utilisateur Linux grâce auquel l'administrateur système peut configurer les chaînes et règles dans le pare-feu en espace noyau (et qui est composé par des modules Netfilter).
+    ifconfig peut aider à attribuer une adresse IP static à une interface réseau.
+    ip est une commande qui permet de faire la même chose que ifconfig (plus puissant).
 
-netstat est une commande qui permet de connaitre toutes les connexions tcp sur une machine
+**iptables** est un logiciel libre de l'espace utilisateur Linux grâce auquel l'administrateur système peut configurer les chaînes et règles dans le pare-feu en espace noyau (et qui est composé par des modules Netfilter).
+
+**netstat** est une commande qui permet de connaitre toutes les connexions tcp sur une machine
 
 Pour assigner une adresse réseau, il suffit d'indiquer l'adresse réseau après avoir précisé l'interface:
 
-# ifconfig eth0 192.168.0.1
+    ifconfig eth0 192.168.0.1
 
 Assigner un masque de sous-réseau
 Pour assigner le masque de sous-réseau, il faut utiliser l'option netmask suivit du masque à appliquer:
 
-# ifconfig eth0 netmask 255.254.0.0
+    ifconfig eth0 netmask 255.254.0.0
+
 Généralement, le masque de sous-réseau est mis en même temps que l'adresse IP:
 
-# ifconfig eth0 netmask 255.254.0.0 192.168.0.1
+    fconfig eth0 netmask 255.254.0.0 192.168.0.1
 
-brctl is used to set up, maintain, and inspect the ethernet bridge con-
+**brctl** is used to set up, maintain, and inspect the ethernet bridge con-
        figuration in the linux kernel.
 
-NAT :
+NAT
+-----
+
 En réseau informatique, on dit qu'un routeur fait du Network Address Translation (NAT) (« translation d'adresse réseau »1) lorsqu'il fait correspondre les adresses IP internes non uniques et souvent non routables d'un intranet à un ensemble d'adresses externes uniques et routables. Ce mécanisme permet notamment de faire correspondre une seule adresse externe publique visible sur Internet à toutes les adresses d'un réseau privé, et pallie ainsi l'épuisement des adresses IPv4.
 
 
