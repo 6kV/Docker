@@ -10,6 +10,15 @@ IP Adress of a container
 Network
 --------
 
+**TCP** : est un protocole de transport fiable, en mode connecté. (établissement d'une session de communication entre deux parties qui veulent échanger des données. Cette session comporte un début, une fin et une validation (vérification des erreurs), classiquement un identifiant un mot de passe)
+
+**UDP** : Contrairement au protocole TCP, il fonctionne sans négociation : il n'existe pas de procédure de connexion préalable à l'envoi des données (le handshaking). Donc UDP ne garantit pas la bonne livraison des datagrammes à destination, ni leur ordre d'arrivée. Il est également possible que des datagrammes soient reçus en plusieurs exemplaires.
+Il est utilisé quand il est nécessaire soit de transmettre des données très rapidement, et où la perte d'une partie de ces données n'a pas grande importance, soit de transmettre des petites quantités de données, là où la connexion « 3-WAY » TCP serait inutilement coûteuse en ressources. Par exemple, dans le cas de la transmission de la voix sur IP, la perte occasionnelle d'un paquet est tolérable dans la mesure où il existe des mécanismes de substitution des données manquantes, par contre la rapidité de transmission est un critère primordial pour la qualité d'écoute.
+Exple d'utilisation : streaming, jeux en réseau...
+
+Il est également utilisé pour émettre des données à plusieurs récepteurs simultanément (multicast, broadcast), la connexion TCP n'étant que point-à-point.
+
+
     ifconfig : InterFace CONFIGurator (informations sur les interfaces réseau)
 
 **ifconfig** peut aider à attribuer une adresse IP static à une interface réseau.
