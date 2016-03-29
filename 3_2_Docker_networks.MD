@@ -9,25 +9,24 @@ IP Adress of a container
  
 Linking container
 ------------------
-
-  docker run -d --name database -e MY_SQL_ROOT_PASSWORD=root mysql
-  docker run -d --link database:db --name web runseb/hostname
-  docker run -d --link web:application --name lb nginx
+    docker run -d --name database -e MY_SQL_ROOT_PASSWORD=root mysql
+    docker run -d --link database:db --name web runseb/hostname
+    docker run -d --link web:application --name lb nginx
   
 The result of linking is that the application container now contains environment variables that point to the database.
 
-  docker exec -ti web env | grep DB
-  DB_PORT=tcp://172.17.0.13:3306
-  ...
-  DB_ENV_MY_SQL_VERSION=5.6.25
+    docker exec -ti web env | grep DB
+    DB_PORT=tcp://172.17.0.13:3306
+    ...
+    DB_ENV_MY_SQL_VERSION=5.6.25
 
 We can use these variables to dynamically configure the application.
 
-the /etc/hosts file is also automatically updated to contain information for name resolution
+the **/etc/hosts** file is also automatically updated to contain information for name resolution
 
-  docker exec -ti web cat /etc/hosts
-  172.17.0.14   62cba32....
-  172.17.0.13   db ceab215b database
+    docker exec -ti web cat /etc/hosts
+    172.17.0.14   62cba32....
+    172.17.0.13   db ceab215b database
   
 **If we restart a container, the /etc/hosts file of container that were linked to it will be updated, but env variables will be unchanged. Therefore using the content of /etc/hosts is the recommended way of extracting the IP adress of a linked container.  
 
