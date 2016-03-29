@@ -40,8 +40,15 @@ Généralement, le masque de sous-réseau est mis en même temps que l'adresse I
 
     fconfig eth0 netmask 255.254.0.0 192.168.0.1
 
-    **brctl** is used to set up, maintain, and inspect the ethernet bridge con-
-       figuration in the linux kernel.
+**brctl** is used to set up, maintain, and inspect the ethernet bridge configuration in the linux kernel.
+An ethernet bridge is a device commonly used to connect different  networks of ethernets together, so that these ethernets will appear as one ethernet to the participants.
+
+    brctl show
+    bridge name	bridge id		STP enabled	interfaces
+    docker0		8000.000000000000	no		
+    lxcbr0		8000.000000000000	no		
+
+
 
 NAT
 -----
