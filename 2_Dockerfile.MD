@@ -20,8 +20,6 @@ import/export containers
 Dockerfile
 -----------
 
-From : image de base8ices
----------------
 https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/
 
  + Single process per container (decoupled application that can scale)
