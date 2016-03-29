@@ -45,9 +45,20 @@ une adresse ip lui est assigné avec un masque sous réseau disponible.
 
 
 
-    **docker0** Link encap:Ethernet  HWaddr 00:00:00:00:00:00  
+    **docker0** Link encap:Ethernet  HWaddr 00:00:00:00:00:00
+    inet adr:172.17.42.1  Bcast:0.0.0.0  Masque:255.255.0.0
     UP BROADCAST MULTICAST  MTU:1500  Metric:1
     Packets reçus:11 erreurs:0 :0 overruns:0 frame:0
     TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
     collisions:0 lg file transmission:0 
     Octets reçus:752 (752.0 B) Octets transmis:473 (473.0 B)
+
+
+private address : 172.17.42.1
+Masque sous réseau : 255.255.0.0
+
+172.17.42.1/16
+
+When a container is created, Docker creates a pair of "peer" network interfaces that are placed in two seperate network namespace: one interface in the networking namespace of the container (i.e eth0) and one interface in the networking namespace of the host, attached to the docker0 bridge.
+
+In the container, a virtual network interface is created (**veth**) and attached to the bridge.
