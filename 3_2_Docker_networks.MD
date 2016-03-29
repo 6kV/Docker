@@ -62,3 +62,7 @@ Masque sous réseau : 255.255.0.0
 When a container is created, Docker creates a pair of "peer" network interfaces that are placed in two seperate network namespace: one interface in the networking namespace of the container (i.e eth0) and one interface in the networking namespace of the host, attached to the docker0 bridge.
 
 In the container, a virtual network interface is created (**veth**) and attached to the bridge.
+we can run this command to check bridge :
+    brctl showu
+    
+Outbound networking traffic is forwarded to other interfaces of your docker host via IP forwarding and will go through NAT translation using an IP table masquerading rule.
