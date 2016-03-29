@@ -1,12 +1,3 @@
-IP Adress of a container
--------------------------
-
-    sudo docker run -d --name nginx nginx
-    sudo docker inspect --format {{IpAdress}}nginx
-
-    sudo docker inspect --format '{{ .NetworkSettings.IPAddress}}' 09287
-    172.17.0.8
-
 Network
 --------
 
@@ -57,20 +48,3 @@ NAT
 
 En réseau informatique, on dit qu'un routeur fait du Network Address Translation (NAT) (« translation d'adresse réseau ») lorsqu'il fait correspondre les adresses IP internes non uniques et souvent non routables d'un intranet à un ensemble d'adresses externes uniques et routables. Ce mécanisme permet notamment de faire correspondre une seule adresse externe publique visible sur Internet à toutes les adresses d'un réseau privé, et pallie ainsi l'épuisement des adresses IPv4.
 
-
-
-Network docker
---------------
-
-Dés qu'on installe Docker, un brdige **docker0** (interface réseau virtuelle) est créé.
-une adresse ip lui est assigné avec un masque sous réseau disponible.
-
-
-
-    **docker0** Link encap:Ethernet  HWaddr 00:00:00:00:00:00  
-    adr inet6: fe80::ecc9:9fff:fe8e:24db/64 Scope:Lien
-    UP BROADCAST MULTICAST  MTU:1500  Metric:1
-    Packets reçus:11 erreurs:0 :0 overruns:0 frame:0
-    TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
-    collisions:0 lg file transmission:0 
-    Octets reçus:752 (752.0 B) Octets transmis:473 (473.0 B)
