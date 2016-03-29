@@ -18,6 +18,13 @@ Exple d'utilisation : streaming, jeux en réseau...
 
 Il est également utilisé pour émettre des données à plusieurs récepteurs simultanément (multicast, broadcast), la connexion TCP n'étant que point-à-point.
 
+**FQDN** : Dans le DNS, un fully qualified domain name (FQDN, ou nom de domaine complètement qualifié) est un nom de domaine qui révèle la position absolue d'un nœud dans l'arborescence DNS en indiquant tous les domaines de niveau supérieur jusqu'à la racine. On parle également de domaine absolu, par opposition aux domaines relatifs. Par convention, le FQDN est ponctué par un point final
+
+exemples : 
+ + commons.wikimedia.org. est un FQDN car aucun sous-domaine supérieur n'est omis et il se termine par un point final.
+ + commons et commons.wikimedia ne sont pas des FQDN car les domaines de niveau supérieur sont omis.
+
+**/etc/hosts** : Le fichier hosts est utilisé sous tous les systèmes d’exploitations lors de l’accès à Internet, ce fichier est consulté avant l’accès au serveur DNS. C’est un simple fichier qui contient sur la même ligne une adresse IP et parfois le nom de domaine. Ce fichier peut aussi servir à définir les noms des machines sur un réseau local.
 
     ifconfig : InterFace CONFIGurator (informations sur les interfaces réseau)
 
