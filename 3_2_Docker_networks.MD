@@ -28,7 +28,14 @@ the **/etc/hosts** file is also automatically updated to contain information for
     172.17.0.14   62cba32....
     172.17.0.13   db ceab215b database
   
-**If we restart a container, the /etc/hosts file of container that were linked to it will be updated, but env variables will be unchanged. Therefore using the content of /etc/hosts is the recommended way of extracting the IP adress of a linked container.  
+**If we restart a container, the /etc/hosts file of container that were linked to it will be updated, but env variables will be unchanged. Therefore using the content of /etc/hosts is the recommended way of extracting the IP adress of a linked container.**
+
+We can use inspect command to see containers linking :
+
+    docker inspect -f "{{.HostConfig.Links}}" application
+    [/database:/application/db]
+    
+Although container linking is useful for development on a single machine, in large scale deployments it will show limitations, including when containers get restarted often. A system based on either DNS or dynamic container registration system will scale and be updated automatically.
 
 Network docker
 --------------
