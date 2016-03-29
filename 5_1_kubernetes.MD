@@ -1,0 +1,1 @@
+etcd : Etcd is an open-source distributed key-value store that serves as the backbone of distributed systems by providing a canonical hub for cluster coordination and state management – the systems source of truth. While etcd was built specifically for clusters running CoreOS, etcd works on a variety of operating systems including OS X, Linux, and BSD.
