@@ -66,3 +66,14 @@ we can run this command to check bridge :
     brctl showu
     
 Outbound networking traffic is forwarded to other interfaces of your docker host via IP forwarding and will go through NAT translation using an IP table masquerading rule.
+
+Container Networking Namespace :
+--------------------------------
+
+ + --net=none : no networking namespace
+ + --net=host : networking namespace of the host
+ + --net=container:CONTAINER_ID : use network stack of another already running container
+
+
+
+
